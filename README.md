@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# UserFinder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+این مخزن نسخه‌ای کوچک و آمادهٔ انتشار از پروژه‌ی **UserFinder** است — یک رابط ساده React + Vite با TypeScript که شامل هدر و یک باکس جستجو است.
 
-Currently, two official plugins are available:
+هدف این تغییرات: آماده‌سازی برای انتشار در ریپازیتوری شخصی، کاهش حجم با حذف/نادیده گرفتن فایل‌های محلی و اضافه کردن فایل‌های متنی توضیح‌دهنده.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## تغییرات اعمال‌شده
+- نام پروژه در `package.json` به `UserFinder` تغییر یافت.
+- عنوان صفحه (`<title>`) در `index.html` به `UserFinder` تغییر داده شد.
+- یک فایل `.gitignore` کامل اضافه شد تا فایل‌های حجیم و محلی (مثل `node_modules/`، فایل‌های env و لاگ‌ها) در گیت قرار نگیرند.
+- فایل خالی/غیرضروری `public/components/functions/functions.tsx` حذف شد تا شلوغی کاهش یابد.
 
-## React Compiler
+## ساختار مختصر پروژه
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `index.html` — درگاه اصلی HTML
+- `src/` — کد اپلیکیشن (React + TypeScript)
+- `public/components/` — کامپوننت‌های عمومی مانند `header` و `footer`
+- `package.json` — اسکریپت‌ها و وابستگی‌ها
 
-## Expanding the ESLint configuration
+## پیش‌نیازها
+- Node.js یا Bun (اگر از Bun استفاده می‌کنید). Bun برای نصب و اجرای سریع توصیه می‌شود اما می‌توانید با npm/yarn هم کار کنید.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## راه‌اندازی محلی
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+روش پیشنهادی با Bun:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```powershell
+bun install
+bun run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+اگر Bun ندارید، با npm:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```powershell
+npm install
+npm run dev
 ```
+
+سرور توسعهٔ Vite معمولاً روی `http://localhost:5173/` در دسترس خواهد بود.
+
+## چه چیزهایی در ریپازیتوری قرار نمی‌گیرد
+مواردی که در `.gitignore` اضافه شده و نباید push شوند:
+
+- `node_modules/`, `dist/`, `build/`, `.vite/`
+- فایل‌های محیطی: `.env`, `.env.*`
+- لاگ‌ها و فایل‌های موقتی: `*.log`, `npm-debug.log*`, `yarn-error.log*`
+- فایل‌های IDE: `.vscode/`, `.idea/`
+- lockfileهای محلی غیرضروری در صورت استفاده از Bun: `bun.lockb` (گرچه بسته به workflow ممکن است بخواهید آن را نگه دارید)
+
+اگر می‌خواهی فایل‌های بزرگ (مثل تصاویر یا ویدیو) را نیز حذف کنم، بهم بگو تا قبل از push آن‌ها را پاک کنم.
+
+## انتشار به GitHub
+من تغییرات محلی را اعمال کردم و تلاش می‌کنم آن‌ها را به ریپازیتوری شما در آدرس زیر push کنم:
+
+```
+https://github.com/amirmmaleki/UserFinder.git
+```
+
+تذکر: هنگام push احتمالاً نیاز به احراز هویت (PAT یا SSH key) خواهید داشت. در صورت مواجهه با خطای auth من دقیقاً راهنمایی‌ات می‌کنم چطور با Personal Access Token یا کلید SSH دسترسی را برقرار کنی.
+
+## قدم‌های بعدی پیشنهاد شده
+- اضافه کردن `LICENSE` (مثلاً MIT) در صورت عمومی بودن پروژه
+- اضافه کردن یک workflow ساده GitHub Actions برای تست و lint قبل از merge
+- بررسی و کوچک‌سازی وابستگی‌ها برای کاهش حجم نهایی
+
+اگر آماده‌ای، الان تغییرات را commit و remote را به `https://github.com/amirmmaleki/UserFinder.git` اضافه و push کنم.

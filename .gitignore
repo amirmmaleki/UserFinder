@@ -1,3 +1,126 @@
+.DS_Store
+Thumbs.db
+node_modules/
+/.pnp
+.pnp.js
+dist/
+build/
+.vite/
+/.cache
+.turbo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun.lockb
+package-lock.json
+yarn.lock
+.env
+.env.*
+.local
+.npmrc
+.parcel-cache
+coverage/
+.nyc_output/
+/.idea/
+.vscode/
+.history/
+.sass-cache/
+logs
+*.log
+*.tgz
+*.zip
+*.tar.gz
+public/assets/*.map
+/.DS_Store
+# OS generated files
+ehthumbs.db
+Icon?
+
+# TypeScript
+*.tsbuildinfo
+
+# Vite / Rollup
+.rpt2_cache/
+/.rts2_cache_cjs
+
+# Jest
+/coverage
+
+# Misc
+*.local
+secrets.env
+
+# Ignore editor folders
+/.vscode
+/.idea
+
+# Ignore build outputs
+/dist
+/build
+
+# Ignore node modules
+/node_modules
+# node
+node_modules/
+/.pnp/
+.pnp.js
+
+# Build output
+dist/
+build/
+.vite/
+/.turbo/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun-debug.log*
+
+# env
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+
+# Misc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Lockfiles (optional to keep, but ignore if you don't want to push them)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Mac / Windows hidden files
+.Spotlight-V100
+.Trashes
+
+# Vite cache
+.vite
+
+# log
+*.log
+
+# Ignore local sensitive files that shouldn't be in a personal repo
+secret.*
+*.key
+*.pem
 # Logs
 logs
 *.log
