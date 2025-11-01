@@ -63,7 +63,7 @@ export default function UserSearch(): JSX.Element {
             value={query}
             onChange={(e) => setQuery(e.target.value)} // هر تغییری در ورودی، state را به‌روز می‌کند
             placeholder="نام کاربر را تایپ کن... (مثلاً: سارا)"
-            className="flex-1 px-4 py-2 rounded-lg borde border-l-blackborder-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="flex-1 px-4 py-2 rounded-lg border border-l-blackborder-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
           />
           {/* دکمه پاک کردن سرچ */}
           <button
